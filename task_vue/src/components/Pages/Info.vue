@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import NextBtnLink from "../Atoms/NextBtnLink";
-import InputForm from "../Molecules/InputForm";
+import NextBtnLink from '../Atoms/NextBtnLink';
+import InputForm from '../Molecules/InputForm';
 
 export default {
   components: {

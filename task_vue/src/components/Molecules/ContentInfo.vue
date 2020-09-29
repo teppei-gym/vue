@@ -2,13 +2,13 @@
   <div class="content">
     <div class="content-tag">-性別-</div>
     <div>
-      <input type="radio" name="sex" id="" />男性
-      <input type="radio" name="sex" id="" />女性
+      <input type="radio" name="sex" value="男性" v-model="sex" />男性
+      <input type="radio" name="sex" value="女性" v-model="sex" />女性
     </div>
     <div class="content-tag">-生年月日-</div>
     <div class="select-date">
       <div>
-        <select name="" id="" v-model="currentYear">
+        <select name="" v-model="currentYear">
           <option v-for="n of yearRoop" :key="n" :value="getMinYear() + n">
             {{
               `${getMinYear() + n}年 (${getJapaneseCalendar(getMinYear() + n)})`
@@ -17,14 +17,14 @@
         >年
       </div>
       <div>
-        <select name="" id="" v-model="currentMonth">
+        <select name="" v-model="currentMonth">
           <option v-for="n of monthRoop" :key="n" :value="n">{{
             n
           }}</option> </select
         >月
       </div>
       <div>
-        <select name="" id="">
+        <select name="">
           <option value="" v-for="n of calculateTheDateByYear" :key="n">{{
             n
           }}</option> </select
@@ -42,7 +42,8 @@ export default {
       monthRoop: 12,
       currentYear: 2020,
       currentMonth: 1,
-      label: "step1",
+      label: 'step1',
+      sex: '',
     };
   },
   methods: {
@@ -52,8 +53,8 @@ export default {
     getJapaneseCalendar(year) {
       const date = new Date();
       date.setFullYear(year);
-      return date.toLocaleDateString("ja-JP-u-ca-japanese", {
-        year: "numeric",
+      return date.toLocaleDateString('ja-JP-u-ca-japanese', {
+        year: 'numeric',
       });
     },
   },
@@ -68,7 +69,7 @@ export default {
     },
   },
   created() {
-    this.$emit("label", this.label);
+    this.$emit('label', this.label);
   },
 };
 </script>
@@ -104,7 +105,7 @@ select {
 .select-date > div:last-child {
   margin: 0;
 }
-input[type="radio"] {
+input[type='radio'] {
   cursor: pointer;
 }
 </style>

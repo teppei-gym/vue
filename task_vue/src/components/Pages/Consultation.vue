@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import InputForm from "../Molecules/InputForm";
-import NextBtnLink from "../Atoms/NextBtnLink";
-import BackBtnLink from "../Atoms/BackBtnLink";
+import InputForm from '../Molecules/InputForm';
+import NextBtnLink from '../Atoms/NextBtnLink';
+import BackBtnLink from '../Atoms/BackBtnLink';
 
 export default {
   components: {

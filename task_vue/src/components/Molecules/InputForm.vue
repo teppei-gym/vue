@@ -12,10 +12,10 @@
 
 <script>
 export default {
-  props: ["header-title"],
+  props: ['header-title'],
   data() {
     return {
-      step: "aaa",
+      step: '',
     };
   },
 };

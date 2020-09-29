@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  props: ["routeName"],
+  props: ['routeName'],
 };
 </script>
 
@@ -28,7 +28,7 @@ a {
   margin-left: 15px;
 }
 .arrow::before {
-  content: "";
+  content: '';
   width: 8px;
   height: 8px;
   border: 0px;

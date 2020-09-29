@@ -26,11 +26,11 @@
 export default {
   data() {
     return {
-      label: "step2",
+      label: 'step2',
     };
   },
   created() {
-    this.$emit("label", this.label);
+    this.$emit('label', this.label);
   },
 };
 </script>
