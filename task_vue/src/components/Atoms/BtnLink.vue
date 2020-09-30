@@ -1,12 +1,12 @@
 <template>
   <router-link :to="{ name: routeName }"
-    >次へ進む<span class="arrow"></span
+    >{{ content }}<span class="arrow"></span
   ></router-link>
 </template>
 
 <script>
 export default {
-  props: ['routeName'],
+  props: ['routeName', 'content'],
 };
 </script>
 

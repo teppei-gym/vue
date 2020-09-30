@@ -3,20 +3,20 @@
     <InputForm header-title="ご相談内容をご記入ください"></InputForm>
     <div class="btn-wrap">
       <BackBtnLink routeName="questionnaire"></BackBtnLink>
-      <NextBtnLink routeName=""></NextBtnLink>
+      <BtnLink routeName="confirm" content="次へ進む"></BtnLink>
     </div>
   </div>
 </template>
 
 <script>
 import InputForm from '../Molecules/InputForm';
-import NextBtnLink from '../Atoms/NextBtnLink';
+import BtnLink from '../Atoms/BtnLink';
 import BackBtnLink from '../Atoms/BackBtnLink';
 
 export default {
   components: {
     InputForm,
-    NextBtnLink,
+    BtnLink,
     BackBtnLink,
   },
 };

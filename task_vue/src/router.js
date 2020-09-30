@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import BtnLink from './src/components/Atoms/BtnLink'
-import Info from './src/components/Pages/Info'
-import Questionnaire from './src/components/Pages/Questionnaire'
-import Consultation from './src/components/Pages/Consultation'
-import ContentInfo from './src/components/Molecules/ContentInfo'
-import ContentQuestionnaire from './src/components/Molecules/ContentQuestionnaire'
-import ContentConsultation from './src/components/Molecules/ContentConsultation'
+import Info from './components/Pages/Info'
+import Questionnaire from './components/Pages/Questionnaire'
+import Consultation from './components/Pages/Consultation'
+import Confirm from './components/Pages/Confirm'
+import ContentInfo from './components/Molecules/ContentInfo'
+import ContentQuestionnaire from './components/Molecules/ContentQuestionnaire'
+import ContentConsultation from './components/Molecules/ContentConsultation'
+import ContentConfirm from './components/Molecules/ContentConfirm'
 
 Vue.use(Router);
 
@@ -44,6 +45,16 @@ export default new Router({
           component: ContentConsultation,
           name: 'consultation',
         }
+      ]
+    },
+    {
+      path: '/confirm',
+      component: Confirm,
+      children: [{
+        path: '',
+        component: ContentConfirm,
+        name: 'confirm'
+      }
       ]
     },
     {
