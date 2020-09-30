@@ -1,23 +1,23 @@
 <template>
   <div class="fade">
-    <InputForm header-title="以下にお答えください"></InputForm>
+    <inputForm header-title="以下の内容をご確認ください"></inputForm>
     <div class="btn-wrap">
-      <BackBtnLink routeName="info"></BackBtnLink>
-      <BtnLink routeName="consultation" content="次へ進む"></BtnLink>
+      <BackBtnLink routeName="consultation"></BackBtnLink>
+      <BtnLink routeName="" content="送信"></BtnLink>
     </div>
   </div>
 </template>
 
 <script>
 import InputForm from '../Molecules/InputForm';
-import BtnLink from '../Atoms/BtnLink';
 import BackBtnLink from '../Atoms/BackBtnLink';
+import BtnLink from '../Atoms/BtnLink';
 
 export default {
   components: {
     InputForm,
-    BtnLink,
     BackBtnLink,
+    BtnLink,
   },
 };
 </script>

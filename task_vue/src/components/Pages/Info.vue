@@ -2,18 +2,18 @@
   <div class="fade">
     <InputForm header-title="お客様の情報を入力してください"></InputForm>
     <div class="btn-wrap">
-      <NextBtnLink routeName="questionnaire"></NextBtnLink>
+      <BtnLink routeName="questionnaire" content="次へ進む"></BtnLink>
     </div>
   </div>
 </template>
 
 <script>
-import NextBtnLink from '../Atoms/NextBtnLink';
+import BtnLink from '../Atoms/BtnLink';
 import InputForm from '../Molecules/InputForm';
 
 export default {
   components: {
-    NextBtnLink,
+    BtnLink,
     InputForm,
   },
 };

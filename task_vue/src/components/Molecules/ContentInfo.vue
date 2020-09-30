@@ -2,13 +2,25 @@
   <div class="content">
     <div class="content-tag">-性別-</div>
     <div>
-      <input type="radio" name="sex" value="男性" v-model="sex" />男性
-      <input type="radio" name="sex" value="女性" v-model="sex" />女性
+      <input
+        type="radio"
+        name="sex"
+        value="男性"
+        v-model="sex"
+        @change="setSex"
+      />男性
+      <input
+        type="radio"
+        name="sex"
+        value="女性"
+        v-model="sex"
+        @change="setSex"
+      />女性
     </div>
     <div class="content-tag">-生年月日-</div>
     <div class="select-date">
       <div>
-        <select name="" v-model="currentYear">
+        <select v-model="currentYear" @change="setBirthday">
           <option v-for="n of yearRoop" :key="n" :value="getMinYear() + n">
             {{
               `${getMinYear() + n}年 (${getJapaneseCalendar(getMinYear() + n)})`
@@ -17,15 +29,15 @@
         >年
       </div>
       <div>
-        <select name="" v-model="currentMonth">
+        <select v-model="currentMonth" @change="setBirthday">
           <option v-for="n of monthRoop" :key="n" :value="n">{{
             n
           }}</option> </select
         >月
       </div>
       <div>
-        <select name="">
-          <option value="" v-for="n of calculateTheDateByYear" :key="n">{{
+        <select v-model="currentDay" @change="setBirthday">
+          <option v-for="n of calculateTheDateByYear" :key="n" :value="n">{{
             n
           }}</option> </select
         >日
@@ -40,15 +52,16 @@ export default {
     return {
       yearRoop: 80,
       monthRoop: 12,
-      currentYear: 2020,
+      currentYear: '',
       currentMonth: 1,
+      currentDay: 1,
       label: 'step1',
       sex: '',
     };
   },
   methods: {
     getMinYear() {
-      return new Date().getFullYear() - this.yearRoop;
+      return this.currentYear - this.yearRoop;
     },
     getJapaneseCalendar(year) {
       const date = new Date();
@@ -56,6 +69,13 @@ export default {
       return date.toLocaleDateString('ja-JP-u-ca-japanese', {
         year: 'numeric',
       });
+    },
+    setSex() {
+      this.$store.commit('setSex', this.sex);
+    },
+    setBirthday() {
+      const date = `${this.currentYear}年${this.currentMonth}月${this.currentDay}日`;
+      this.$store.commit('setBirthday', date);
     },
   },
   computed: {
@@ -69,6 +89,8 @@ export default {
     },
   },
   created() {
+    this.currentYear = new Date().getFullYear();
+    this.setBirthday();
     this.$emit('label', this.label);
   },
 };
